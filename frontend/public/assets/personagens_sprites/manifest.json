@@ -1,0 +1,766 @@
+{
+  "descricao": "Sprites recriados a partir das referencias fornecidas, organizados por personagem.",
+  "grade": {
+    "colunas": 5,
+    "linhas": 4,
+    "quadros_por_personagem": 20
+  },
+  "personagens": {
+    "luma": {
+      "sheet_chromakey": "luma/sheet_chromakey.png",
+      "sheet_transparente": "luma/sheet_transparente.png",
+      "sprites": [
+        {
+          "acao": "idle",
+          "quadro": 1,
+          "arquivo": "luma/sprites/idle_01.png",
+          "celula": "luma/cells/idle_01_cell.png"
+        },
+        {
+          "acao": "idle",
+          "quadro": 2,
+          "arquivo": "luma/sprites/idle_02.png",
+          "celula": "luma/cells/idle_02_cell.png"
+        },
+        {
+          "acao": "idle",
+          "quadro": 3,
+          "arquivo": "luma/sprites/idle_03.png",
+          "celula": "luma/cells/idle_03_cell.png"
+        },
+        {
+          "acao": "idle",
+          "quadro": 4,
+          "arquivo": "luma/sprites/idle_04.png",
+          "celula": "luma/cells/idle_04_cell.png"
+        },
+        {
+          "acao": "idle",
+          "quadro": 5,
+          "arquivo": "luma/sprites/idle_05.png",
+          "celula": "luma/cells/idle_05_cell.png"
+        },
+        {
+          "acao": "andando",
+          "quadro": 1,
+          "arquivo": "luma/sprites/andando_01.png",
+          "celula": "luma/cells/andando_01_cell.png"
+        },
+        {
+          "acao": "andando",
+          "quadro": 2,
+          "arquivo": "luma/sprites/andando_02.png",
+          "celula": "luma/cells/andando_02_cell.png"
+        },
+        {
+          "acao": "andando",
+          "quadro": 3,
+          "arquivo": "luma/sprites/andando_03.png",
+          "celula": "luma/cells/andando_03_cell.png"
+        },
+        {
+          "acao": "andando",
+          "quadro": 4,
+          "arquivo": "luma/sprites/andando_04.png",
+          "celula": "luma/cells/andando_04_cell.png"
+        },
+        {
+          "acao": "andando",
+          "quadro": 5,
+          "arquivo": "luma/sprites/andando_05.png",
+          "celula": "luma/cells/andando_05_cell.png"
+        },
+        {
+          "acao": "pulando",
+          "quadro": 1,
+          "arquivo": "luma/sprites/pulando_01.png",
+          "celula": "luma/cells/pulando_01_cell.png"
+        },
+        {
+          "acao": "pulando",
+          "quadro": 2,
+          "arquivo": "luma/sprites/pulando_02.png",
+          "celula": "luma/cells/pulando_02_cell.png"
+        },
+        {
+          "acao": "pulando",
+          "quadro": 3,
+          "arquivo": "luma/sprites/pulando_03.png",
+          "celula": "luma/cells/pulando_03_cell.png"
+        },
+        {
+          "acao": "pulando",
+          "quadro": 4,
+          "arquivo": "luma/sprites/pulando_04.png",
+          "celula": "luma/cells/pulando_04_cell.png"
+        },
+        {
+          "acao": "pulando",
+          "quadro": 5,
+          "arquivo": "luma/sprites/pulando_05.png",
+          "celula": "luma/cells/pulando_05_cell.png"
+        },
+        {
+          "acao": "falando",
+          "quadro": 1,
+          "arquivo": "luma/sprites/falando_01.png",
+          "celula": "luma/cells/falando_01_cell.png"
+        },
+        {
+          "acao": "falando",
+          "quadro": 2,
+          "arquivo": "luma/sprites/falando_02.png",
+          "celula": "luma/cells/falando_02_cell.png"
+        },
+        {
+          "acao": "falando",
+          "quadro": 3,
+          "arquivo": "luma/sprites/falando_03.png",
+          "celula": "luma/cells/falando_03_cell.png"
+        },
+        {
+          "acao": "falando",
+          "quadro": 4,
+          "arquivo": "luma/sprites/falando_04.png",
+          "celula": "luma/cells/falando_04_cell.png"
+        },
+        {
+          "acao": "falando",
+          "quadro": 5,
+          "arquivo": "luma/sprites/falando_05.png",
+          "celula": "luma/cells/falando_05_cell.png"
+        }
+      ]
+    },
+    "byte": {
+      "sheet_chromakey": "byte/sheet_chromakey.png",
+      "sheet_transparente": "byte/sheet_transparente.png",
+      "sprites": [
+        {
+          "acao": "idle",
+          "quadro": 1,
+          "arquivo": "byte/sprites/idle_01.png",
+          "celula": "byte/cells/idle_01_cell.png"
+        },
+        {
+          "acao": "idle",
+          "quadro": 2,
+          "arquivo": "byte/sprites/idle_02.png",
+          "celula": "byte/cells/idle_02_cell.png"
+        },
+        {
+          "acao": "idle",
+          "quadro": 3,
+          "arquivo": "byte/sprites/idle_03.png",
+          "celula": "byte/cells/idle_03_cell.png"
+        },
+        {
+          "acao": "idle",
+          "quadro": 4,
+          "arquivo": "byte/sprites/idle_04.png",
+          "celula": "byte/cells/idle_04_cell.png"
+        },
+        {
+          "acao": "idle",
+          "quadro": 5,
+          "arquivo": "byte/sprites/idle_05.png",
+          "celula": "byte/cells/idle_05_cell.png"
+        },
+        {
+          "acao": "andando",
+          "quadro": 1,
+          "arquivo": "byte/sprites/andando_01.png",
+          "celula": "byte/cells/andando_01_cell.png"
+        },
+        {
+          "acao": "andando",
+          "quadro": 2,
+          "arquivo": "byte/sprites/andando_02.png",
+          "celula": "byte/cells/andando_02_cell.png"
+        },
+        {
+          "acao": "andando",
+          "quadro": 3,
+          "arquivo": "byte/sprites/andando_03.png",
+          "celula": "byte/cells/andando_03_cell.png"
+        },
+        {
+          "acao": "andando",
+          "quadro": 4,
+          "arquivo": "byte/sprites/andando_04.png",
+          "celula": "byte/cells/andando_04_cell.png"
+        },
+        {
+          "acao": "andando",
+          "quadro": 5,
+          "arquivo": "byte/sprites/andando_05.png",
+          "celula": "byte/cells/andando_05_cell.png"
+        },
+        {
+          "acao": "pulando",
+          "quadro": 1,
+          "arquivo": "byte/sprites/pulando_01.png",
+          "celula": "byte/cells/pulando_01_cell.png"
+        },
+        {
+          "acao": "pulando",
+          "quadro": 2,
+          "arquivo": "byte/sprites/pulando_02.png",
+          "celula": "byte/cells/pulando_02_cell.png"
+        },
+        {
+          "acao": "pulando",
+          "quadro": 3,
+          "arquivo": "byte/sprites/pulando_03.png",
+          "celula": "byte/cells/pulando_03_cell.png"
+        },
+        {
+          "acao": "pulando",
+          "quadro": 4,
+          "arquivo": "byte/sprites/pulando_04.png",
+          "celula": "byte/cells/pulando_04_cell.png"
+        },
+        {
+          "acao": "pulando",
+          "quadro": 5,
+          "arquivo": "byte/sprites/pulando_05.png",
+          "celula": "byte/cells/pulando_05_cell.png"
+        },
+        {
+          "acao": "falando",
+          "quadro": 1,
+          "arquivo": "byte/sprites/falando_01.png",
+          "celula": "byte/cells/falando_01_cell.png"
+        },
+        {
+          "acao": "falando",
+          "quadro": 2,
+          "arquivo": "byte/sprites/falando_02.png",
+          "celula": "byte/cells/falando_02_cell.png"
+        },
+        {
+          "acao": "falando",
+          "quadro": 3,
+          "arquivo": "byte/sprites/falando_03.png",
+          "celula": "byte/cells/falando_03_cell.png"
+        },
+        {
+          "acao": "falando",
+          "quadro": 4,
+          "arquivo": "byte/sprites/falando_04.png",
+          "celula": "byte/cells/falando_04_cell.png"
+        },
+        {
+          "acao": "falando",
+          "quadro": 5,
+          "arquivo": "byte/sprites/falando_05.png",
+          "celula": "byte/cells/falando_05_cell.png"
+        }
+      ]
+    },
+    "faisca": {
+      "sheet_chromakey": "faisca/sheet_chromakey.png",
+      "sheet_transparente": "faisca/sheet_transparente.png",
+      "sprites": [
+        {
+          "acao": "idle",
+          "quadro": 1,
+          "arquivo": "faisca/sprites/idle_01.png",
+          "celula": "faisca/cells/idle_01_cell.png"
+        },
+        {
+          "acao": "idle",
+          "quadro": 2,
+          "arquivo": "faisca/sprites/idle_02.png",
+          "celula": "faisca/cells/idle_02_cell.png"
+        },
+        {
+          "acao": "idle",
+          "quadro": 3,
+          "arquivo": "faisca/sprites/idle_03.png",
+          "celula": "faisca/cells/idle_03_cell.png"
+        },
+        {
+          "acao": "idle",
+          "quadro": 4,
+          "arquivo": "faisca/sprites/idle_04.png",
+          "celula": "faisca/cells/idle_04_cell.png"
+        },
+        {
+          "acao": "idle",
+          "quadro": 5,
+          "arquivo": "faisca/sprites/idle_05.png",
+          "celula": "faisca/cells/idle_05_cell.png"
+        },
+        {
+          "acao": "andando",
+          "quadro": 1,
+          "arquivo": "faisca/sprites/andando_01.png",
+          "celula": "faisca/cells/andando_01_cell.png"
+        },
+        {
+          "acao": "andando",
+          "quadro": 2,
+          "arquivo": "faisca/sprites/andando_02.png",
+          "celula": "faisca/cells/andando_02_cell.png"
+        },
+        {
+          "acao": "andando",
+          "quadro": 3,
+          "arquivo": "faisca/sprites/andando_03.png",
+          "celula": "faisca/cells/andando_03_cell.png"
+        },
+        {
+          "acao": "andando",
+          "quadro": 4,
+          "arquivo": "faisca/sprites/andando_04.png",
+          "celula": "faisca/cells/andando_04_cell.png"
+        },
+        {
+          "acao": "andando",
+          "quadro": 5,
+          "arquivo": "faisca/sprites/andando_05.png",
+          "celula": "faisca/cells/andando_05_cell.png"
+        },
+        {
+          "acao": "correndo",
+          "quadro": 1,
+          "arquivo": "faisca/sprites/correndo_01.png",
+          "celula": "faisca/cells/correndo_01_cell.png"
+        },
+        {
+          "acao": "correndo",
+          "quadro": 2,
+          "arquivo": "faisca/sprites/correndo_02.png",
+          "celula": "faisca/cells/correndo_02_cell.png"
+        },
+        {
+          "acao": "correndo",
+          "quadro": 3,
+          "arquivo": "faisca/sprites/correndo_03.png",
+          "celula": "faisca/cells/correndo_03_cell.png"
+        },
+        {
+          "acao": "correndo",
+          "quadro": 4,
+          "arquivo": "faisca/sprites/correndo_04.png",
+          "celula": "faisca/cells/correndo_04_cell.png"
+        },
+        {
+          "acao": "correndo",
+          "quadro": 5,
+          "arquivo": "faisca/sprites/correndo_05.png",
+          "celula": "faisca/cells/correndo_05_cell.png"
+        },
+        {
+          "acao": "emocoes",
+          "quadro": 1,
+          "arquivo": "faisca/sprites/emocoes_01.png",
+          "celula": "faisca/cells/emocoes_01_cell.png"
+        },
+        {
+          "acao": "emocoes",
+          "quadro": 2,
+          "arquivo": "faisca/sprites/emocoes_02.png",
+          "celula": "faisca/cells/emocoes_02_cell.png"
+        },
+        {
+          "acao": "emocoes",
+          "quadro": 3,
+          "arquivo": "faisca/sprites/emocoes_03.png",
+          "celula": "faisca/cells/emocoes_03_cell.png"
+        },
+        {
+          "acao": "emocoes",
+          "quadro": 4,
+          "arquivo": "faisca/sprites/emocoes_04.png",
+          "celula": "faisca/cells/emocoes_04_cell.png"
+        },
+        {
+          "acao": "emocoes",
+          "quadro": 5,
+          "arquivo": "faisca/sprites/emocoes_05.png",
+          "celula": "faisca/cells/emocoes_05_cell.png"
+        }
+      ]
+    },
+    "teo": {
+      "sheet_chromakey": "teo/sheet_chromakey.png",
+      "sheet_transparente": "teo/sheet_transparente.png",
+      "sprites": [
+        {
+          "acao": "idle",
+          "quadro": 1,
+          "arquivo": "teo/sprites/idle_01.png",
+          "celula": "teo/cells/idle_01_cell.png"
+        },
+        {
+          "acao": "idle",
+          "quadro": 2,
+          "arquivo": "teo/sprites/idle_02.png",
+          "celula": "teo/cells/idle_02_cell.png"
+        },
+        {
+          "acao": "idle",
+          "quadro": 3,
+          "arquivo": "teo/sprites/idle_03.png",
+          "celula": "teo/cells/idle_03_cell.png"
+        },
+        {
+          "acao": "idle",
+          "quadro": 4,
+          "arquivo": "teo/sprites/idle_04.png",
+          "celula": "teo/cells/idle_04_cell.png"
+        },
+        {
+          "acao": "idle",
+          "quadro": 5,
+          "arquivo": "teo/sprites/idle_05.png",
+          "celula": "teo/cells/idle_05_cell.png"
+        },
+        {
+          "acao": "andando",
+          "quadro": 1,
+          "arquivo": "teo/sprites/andando_01.png",
+          "celula": "teo/cells/andando_01_cell.png"
+        },
+        {
+          "acao": "andando",
+          "quadro": 2,
+          "arquivo": "teo/sprites/andando_02.png",
+          "celula": "teo/cells/andando_02_cell.png"
+        },
+        {
+          "acao": "andando",
+          "quadro": 3,
+          "arquivo": "teo/sprites/andando_03.png",
+          "celula": "teo/cells/andando_03_cell.png"
+        },
+        {
+          "acao": "andando",
+          "quadro": 4,
+          "arquivo": "teo/sprites/andando_04.png",
+          "celula": "teo/cells/andando_04_cell.png"
+        },
+        {
+          "acao": "andando",
+          "quadro": 5,
+          "arquivo": "teo/sprites/andando_05.png",
+          "celula": "teo/cells/andando_05_cell.png"
+        },
+        {
+          "acao": "pulando",
+          "quadro": 1,
+          "arquivo": "teo/sprites/pulando_01.png",
+          "celula": "teo/cells/pulando_01_cell.png"
+        },
+        {
+          "acao": "pulando",
+          "quadro": 2,
+          "arquivo": "teo/sprites/pulando_02.png",
+          "celula": "teo/cells/pulando_02_cell.png"
+        },
+        {
+          "acao": "pulando",
+          "quadro": 3,
+          "arquivo": "teo/sprites/pulando_03.png",
+          "celula": "teo/cells/pulando_03_cell.png"
+        },
+        {
+          "acao": "pulando",
+          "quadro": 4,
+          "arquivo": "teo/sprites/pulando_04.png",
+          "celula": "teo/cells/pulando_04_cell.png"
+        },
+        {
+          "acao": "pulando",
+          "quadro": 5,
+          "arquivo": "teo/sprites/pulando_05.png",
+          "celula": "teo/cells/pulando_05_cell.png"
+        },
+        {
+          "acao": "emocoes",
+          "quadro": 1,
+          "arquivo": "teo/sprites/emocoes_01.png",
+          "celula": "teo/cells/emocoes_01_cell.png"
+        },
+        {
+          "acao": "emocoes",
+          "quadro": 2,
+          "arquivo": "teo/sprites/emocoes_02.png",
+          "celula": "teo/cells/emocoes_02_cell.png"
+        },
+        {
+          "acao": "emocoes",
+          "quadro": 3,
+          "arquivo": "teo/sprites/emocoes_03.png",
+          "celula": "teo/cells/emocoes_03_cell.png"
+        },
+        {
+          "acao": "emocoes",
+          "quadro": 4,
+          "arquivo": "teo/sprites/emocoes_04.png",
+          "celula": "teo/cells/emocoes_04_cell.png"
+        },
+        {
+          "acao": "emocoes",
+          "quadro": 5,
+          "arquivo": "teo/sprites/emocoes_05.png",
+          "celula": "teo/cells/emocoes_05_cell.png"
+        }
+      ]
+    },
+    "nino": {
+      "sheet_chromakey": "nino/sheet_chromakey.png",
+      "sheet_transparente": "nino/sheet_transparente.png",
+      "sprites": [
+        {
+          "acao": "idle",
+          "quadro": 1,
+          "arquivo": "nino/sprites/idle_01.png",
+          "celula": "nino/cells/idle_01_cell.png"
+        },
+        {
+          "acao": "idle",
+          "quadro": 2,
+          "arquivo": "nino/sprites/idle_02.png",
+          "celula": "nino/cells/idle_02_cell.png"
+        },
+        {
+          "acao": "idle",
+          "quadro": 3,
+          "arquivo": "nino/sprites/idle_03.png",
+          "celula": "nino/cells/idle_03_cell.png"
+        },
+        {
+          "acao": "idle",
+          "quadro": 4,
+          "arquivo": "nino/sprites/idle_04.png",
+          "celula": "nino/cells/idle_04_cell.png"
+        },
+        {
+          "acao": "idle",
+          "quadro": 5,
+          "arquivo": "nino/sprites/idle_05.png",
+          "celula": "nino/cells/idle_05_cell.png"
+        },
+        {
+          "acao": "andando",
+          "quadro": 1,
+          "arquivo": "nino/sprites/andando_01.png",
+          "celula": "nino/cells/andando_01_cell.png"
+        },
+        {
+          "acao": "andando",
+          "quadro": 2,
+          "arquivo": "nino/sprites/andando_02.png",
+          "celula": "nino/cells/andando_02_cell.png"
+        },
+        {
+          "acao": "andando",
+          "quadro": 3,
+          "arquivo": "nino/sprites/andando_03.png",
+          "celula": "nino/cells/andando_03_cell.png"
+        },
+        {
+          "acao": "andando",
+          "quadro": 4,
+          "arquivo": "nino/sprites/andando_04.png",
+          "celula": "nino/cells/andando_04_cell.png"
+        },
+        {
+          "acao": "andando",
+          "quadro": 5,
+          "arquivo": "nino/sprites/andando_05.png",
+          "celula": "nino/cells/andando_05_cell.png"
+        },
+        {
+          "acao": "pulando",
+          "quadro": 1,
+          "arquivo": "nino/sprites/pulando_01.png",
+          "celula": "nino/cells/pulando_01_cell.png"
+        },
+        {
+          "acao": "pulando",
+          "quadro": 2,
+          "arquivo": "nino/sprites/pulando_02.png",
+          "celula": "nino/cells/pulando_02_cell.png"
+        },
+        {
+          "acao": "pulando",
+          "quadro": 3,
+          "arquivo": "nino/sprites/pulando_03.png",
+          "celula": "nino/cells/pulando_03_cell.png"
+        },
+        {
+          "acao": "pulando",
+          "quadro": 4,
+          "arquivo": "nino/sprites/pulando_04.png",
+          "celula": "nino/cells/pulando_04_cell.png"
+        },
+        {
+          "acao": "pulando",
+          "quadro": 5,
+          "arquivo": "nino/sprites/pulando_05.png",
+          "celula": "nino/cells/pulando_05_cell.png"
+        },
+        {
+          "acao": "emocoes",
+          "quadro": 1,
+          "arquivo": "nino/sprites/emocoes_01.png",
+          "celula": "nino/cells/emocoes_01_cell.png"
+        },
+        {
+          "acao": "emocoes",
+          "quadro": 2,
+          "arquivo": "nino/sprites/emocoes_02.png",
+          "celula": "nino/cells/emocoes_02_cell.png"
+        },
+        {
+          "acao": "emocoes",
+          "quadro": 3,
+          "arquivo": "nino/sprites/emocoes_03.png",
+          "celula": "nino/cells/emocoes_03_cell.png"
+        },
+        {
+          "acao": "emocoes",
+          "quadro": 4,
+          "arquivo": "nino/sprites/emocoes_04.png",
+          "celula": "nino/cells/emocoes_04_cell.png"
+        },
+        {
+          "acao": "emocoes",
+          "quadro": 5,
+          "arquivo": "nino/sprites/emocoes_05.png",
+          "celula": "nino/cells/emocoes_05_cell.png"
+        }
+      ]
+    },
+    "bia": {
+      "sheet_chromakey": "bia/sheet_chromakey.png",
+      "sheet_transparente": "bia/sheet_transparente.png",
+      "sprites": [
+        {
+          "acao": "idle",
+          "quadro": 1,
+          "arquivo": "bia/sprites/idle_01.png",
+          "celula": "bia/cells/idle_01_cell.png"
+        },
+        {
+          "acao": "idle",
+          "quadro": 2,
+          "arquivo": "bia/sprites/idle_02.png",
+          "celula": "bia/cells/idle_02_cell.png"
+        },
+        {
+          "acao": "idle",
+          "quadro": 3,
+          "arquivo": "bia/sprites/idle_03.png",
+          "celula": "bia/cells/idle_03_cell.png"
+        },
+        {
+          "acao": "idle",
+          "quadro": 4,
+          "arquivo": "bia/sprites/idle_04.png",
+          "celula": "bia/cells/idle_04_cell.png"
+        },
+        {
+          "acao": "idle",
+          "quadro": 5,
+          "arquivo": "bia/sprites/idle_05.png",
+          "celula": "bia/cells/idle_05_cell.png"
+        },
+        {
+          "acao": "andando",
+          "quadro": 1,
+          "arquivo": "bia/sprites/andando_01.png",
+          "celula": "bia/cells/andando_01_cell.png"
+        },
+        {
+          "acao": "andando",
+          "quadro": 2,
+          "arquivo": "bia/sprites/andando_02.png",
+          "celula": "bia/cells/andando_02_cell.png"
+        },
+        {
+          "acao": "andando",
+          "quadro": 3,
+          "arquivo": "bia/sprites/andando_03.png",
+          "celula": "bia/cells/andando_03_cell.png"
+        },
+        {
+          "acao": "andando",
+          "quadro": 4,
+          "arquivo": "bia/sprites/andando_04.png",
+          "celula": "bia/cells/andando_04_cell.png"
+        },
+        {
+          "acao": "andando",
+          "quadro": 5,
+          "arquivo": "bia/sprites/andando_05.png",
+          "celula": "bia/cells/andando_05_cell.png"
+        },
+        {
+          "acao": "acenando",
+          "quadro": 1,
+          "arquivo": "bia/sprites/acenando_01.png",
+          "celula": "bia/cells/acenando_01_cell.png"
+        },
+        {
+          "acao": "acenando",
+          "quadro": 2,
+          "arquivo": "bia/sprites/acenando_02.png",
+          "celula": "bia/cells/acenando_02_cell.png"
+        },
+        {
+          "acao": "acenando",
+          "quadro": 3,
+          "arquivo": "bia/sprites/acenando_03.png",
+          "celula": "bia/cells/acenando_03_cell.png"
+        },
+        {
+          "acao": "acenando",
+          "quadro": 4,
+          "arquivo": "bia/sprites/acenando_04.png",
+          "celula": "bia/cells/acenando_04_cell.png"
+        },
+        {
+          "acao": "acenando",
+          "quadro": 5,
+          "arquivo": "bia/sprites/acenando_05.png",
+          "celula": "bia/cells/acenando_05_cell.png"
+        },
+        {
+          "acao": "emocoes",
+          "quadro": 1,
+          "arquivo": "bia/sprites/emocoes_01.png",
+          "celula": "bia/cells/emocoes_01_cell.png"
+        },
+        {
+          "acao": "emocoes",
+          "quadro": 2,
+          "arquivo": "bia/sprites/emocoes_02.png",
+          "celula": "bia/cells/emocoes_02_cell.png"
+        },
+        {
+          "acao": "emocoes",
+          "quadro": 3,
+          "arquivo": "bia/sprites/emocoes_03.png",
+          "celula": "bia/cells/emocoes_03_cell.png"
+        },
+        {
+          "acao": "emocoes",
+          "quadro": 4,
+          "arquivo": "bia/sprites/emocoes_04.png",
+          "celula": "bia/cells/emocoes_04_cell.png"
+        },
+        {
+          "acao": "emocoes",
+          "quadro": 5,
+          "arquivo": "bia/sprites/emocoes_05.png",
+          "celula": "bia/cells/emocoes_05_cell.png"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,284 @@
+﻿{
+    "teo":  {
+                "image":  "/assets/characters/sprites/teo-spritesheet.png",
+                "frameWidth":  256,
+                "frameHeight":  256,
+                "frames":  [
+                               {
+                                   "key":  "idle",
+                                   "index":  0,
+                                   "x":  0,
+                                   "y":  0,
+                                   "w":  256,
+                                   "h":  256
+                               },
+                               {
+                                   "key":  "front",
+                                   "index":  1,
+                                   "x":  256,
+                                   "y":  0,
+                                   "w":  256,
+                                   "h":  256
+                               },
+                               {
+                                   "key":  "mirror",
+                                   "index":  2,
+                                   "x":  512,
+                                   "y":  0,
+                                   "w":  256,
+                                   "h":  256
+                               },
+                               {
+                                   "key":  "read",
+                                   "index":  3,
+                                   "x":  768,
+                                   "y":  0,
+                                   "w":  256,
+                                   "h":  256
+                               },
+                               {
+                                   "key":  "meditate",
+                                   "index":  4,
+                                   "x":  1024,
+                                   "y":  0,
+                                   "w":  256,
+                                   "h":  256
+                               }
+                           ]
+            },
+    "faisca":  {
+                   "image":  "/assets/characters/sprites/faisca-spritesheet.png",
+                   "frameWidth":  256,
+                   "frameHeight":  256,
+                   "frames":  [
+                                  {
+                                      "key":  "idle",
+                                      "index":  0,
+                                      "x":  0,
+                                      "y":  0,
+                                      "w":  256,
+                                      "h":  256
+                                  },
+                                  {
+                                      "key":  "front",
+                                      "index":  1,
+                                      "x":  256,
+                                      "y":  0,
+                                      "w":  256,
+                                      "h":  256
+                                  },
+                                  {
+                                      "key":  "mirror",
+                                      "index":  2,
+                                      "x":  512,
+                                      "y":  0,
+                                      "w":  256,
+                                      "h":  256
+                                  },
+                                  {
+                                      "key":  "map",
+                                      "index":  3,
+                                      "x":  768,
+                                      "y":  0,
+                                      "w":  256,
+                                      "h":  256
+                                  },
+                                  {
+                                      "key":  "run",
+                                      "index":  4,
+                                      "x":  1024,
+                                      "y":  0,
+                                      "w":  256,
+                                      "h":  256
+                                  }
+                              ]
+               },
+    "bia":  {
+                "image":  "/assets/characters/sprites/bia-spritesheet.png",
+                "frameWidth":  256,
+                "frameHeight":  256,
+                "frames":  [
+                               {
+                                   "key":  "idle",
+                                   "index":  0,
+                                   "x":  0,
+                                   "y":  0,
+                                   "w":  256,
+                                   "h":  256
+                               },
+                               {
+                                   "key":  "front",
+                                   "index":  1,
+                                   "x":  256,
+                                   "y":  0,
+                                   "w":  256,
+                                   "h":  256
+                               },
+                               {
+                                   "key":  "mirror",
+                                   "index":  2,
+                                   "x":  512,
+                                   "y":  0,
+                                   "w":  256,
+                                   "h":  256
+                               },
+                               {
+                                   "key":  "globe",
+                                   "index":  3,
+                                   "x":  768,
+                                   "y":  0,
+                                   "w":  256,
+                                   "h":  256
+                               },
+                               {
+                                   "key":  "magnify",
+                                   "index":  4,
+                                   "x":  1024,
+                                   "y":  0,
+                                   "w":  256,
+                                   "h":  256
+                               }
+                           ]
+            },
+    "byte":  {
+                 "image":  "/assets/characters/sprites/byte-spritesheet.png",
+                 "frameWidth":  256,
+                 "frameHeight":  256,
+                 "frames":  [
+                                {
+                                    "key":  "idle",
+                                    "index":  0,
+                                    "x":  0,
+                                    "y":  0,
+                                    "w":  256,
+                                    "h":  256
+                                },
+                                {
+                                    "key":  "front",
+                                    "index":  1,
+                                    "x":  256,
+                                    "y":  0,
+                                    "w":  256,
+                                    "h":  256
+                                },
+                                {
+                                    "key":  "mirror",
+                                    "index":  2,
+                                    "x":  512,
+                                    "y":  0,
+                                    "w":  256,
+                                    "h":  256
+                                },
+                                {
+                                    "key":  "thumbs",
+                                    "index":  3,
+                                    "x":  768,
+                                    "y":  0,
+                                    "w":  256,
+                                    "h":  256
+                                },
+                                {
+                                    "key":  "idle2",
+                                    "index":  4,
+                                    "x":  1024,
+                                    "y":  0,
+                                    "w":  256,
+                                    "h":  256
+                                }
+                            ]
+             },
+    "luma":  {
+                 "image":  "/assets/characters/sprites/luma-spritesheet.png",
+                 "frameWidth":  256,
+                 "frameHeight":  256,
+                 "frames":  [
+                                {
+                                    "key":  "idle",
+                                    "index":  0,
+                                    "x":  0,
+                                    "y":  0,
+                                    "w":  256,
+                                    "h":  256
+                                },
+                                {
+                                    "key":  "front",
+                                    "index":  1,
+                                    "x":  256,
+                                    "y":  0,
+                                    "w":  256,
+                                    "h":  256
+                                },
+                                {
+                                    "key":  "mirror",
+                                    "index":  2,
+                                    "x":  512,
+                                    "y":  0,
+                                    "w":  256,
+                                    "h":  256
+                                },
+                                {
+                                    "key":  "hint",
+                                    "index":  3,
+                                    "x":  768,
+                                    "y":  0,
+                                    "w":  256,
+                                    "h":  256
+                                },
+                                {
+                                    "key":  "read",
+                                    "index":  4,
+                                    "x":  1024,
+                                    "y":  0,
+                                    "w":  256,
+                                    "h":  256
+                                }
+                            ]
+             },
+    "nino":  {
+                 "image":  "/assets/characters/sprites/nino-spritesheet.png",
+                 "frameWidth":  256,
+                 "frameHeight":  256,
+                 "frames":  [
+                                {
+                                    "key":  "idle",
+                                    "index":  0,
+                                    "x":  0,
+                                    "y":  0,
+                                    "w":  256,
+                                    "h":  256
+                                },
+                                {
+                                    "key":  "front",
+                                    "index":  1,
+                                    "x":  256,
+                                    "y":  0,
+                                    "w":  256,
+                                    "h":  256
+                                },
+                                {
+                                    "key":  "mirror",
+                                    "index":  2,
+                                    "x":  512,
+                                    "y":  0,
+                                    "w":  256,
+                                    "h":  256
+                                },
+                                {
+                                    "key":  "tool",
+                                    "index":  3,
+                                    "x":  768,
+                                    "y":  0,
+                                    "w":  256,
+                                    "h":  256
+                                },
+                                {
+                                    "key":  "gadget",
+                                    "index":  4,
+                                    "x":  1024,
+                                    "y":  0,
+                                    "w":  256,
+                                    "h":  256
+                                }
+                            ]
+             }
+}
