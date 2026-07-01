@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams, useNavigate, useLocation } from 'react-router-dom'
 import { getPhaseQuestions, submitPhase } from '../api/questions'
 import useGameStore from '../store/gameStore'
 import useProgressStore from '../store/progressStore'
@@ -100,8 +100,8 @@ const FALLBACK_QUESTIONS = {
   ],
 }
 
-function getWorldCharacter(phaseId) {
-  const worldId = phaseId?.split('-').slice(0, -1).join('-') ?? phaseId
+function getWorldCharacter(phaseId, worldIdHint) {
+  const worldId = worldIdHint ?? phaseId?.split('-').slice(0, -1).join('-') ?? phaseId
   const world = worlds.find((w) => w.id === worldId) ?? worlds[0]
   return { world, character: getCharacter(world.characterId) }
 }
@@ -129,6 +129,7 @@ function SpeechBubble({ text, color }) {
 export default function GamePage() {
   const { phaseId } = useParams()
   const navigate    = useNavigate()
+  const location    = useLocation()
   const { addAnswer, resetGame, addScore, score } = useGameStore()
   const setPhaseStars = useProgressStore((s) => s.setPhaseStars)
 
@@ -142,11 +143,18 @@ export default function GamePage() {
   const [showIntro, setShowIntro]     = useState(true)
   const [reaction, setReaction]       = useState('idle')
   const [bubble, setBubble]           = useState(null) // { text, type: 'correct'|'wrong' }
+  // Na última pergunta, o primeiro clique em "Próxima" só confirma a resposta;
+  // o botão "Ver Resultado" só aparece depois disso, num segundo clique.
+  const [reachedEnd, setReachedEnd]   = useState(false)
 
   // Usa ref para ter sempre o valor mais recente das respostas
   const correctCountRef = useRef(0)
+  // Trava por ref (síncrona) contra cliques duplos rápidos — o guard via
+  // estado `selected` sozinho pode deixar passar dois cliques antes do
+  // React re-renderizar, fazendo a resposta seguinte não ser contabilizada.
+  const answeredRef = useRef(false)
 
-  const { world, character } = getWorldCharacter(phaseId)
+  const { world, character } = getWorldCharacter(phaseId, location.state?.worldId)
   const falas    = CHAR_FALAS[world.characterId] ?? CHAR_FALAS.luma
   const [fala]   = useState(() => falas[Math.floor(Math.random() * falas.length)])
   const introSrc = CHAR_INTRO_IMG[world.characterId] ?? CHAR_INTRO_IMG.luma
@@ -154,6 +162,8 @@ export default function GamePage() {
   useEffect(() => {
     resetGame()
     correctCountRef.current = 0
+    answeredRef.current = false
+    setReachedEnd(false)
     getPhaseQuestions(phaseId)
       .then(({ data }) => setQuestions(data))
       .catch(() => {
@@ -164,7 +174,8 @@ export default function GamePage() {
   }, [phaseId])
 
   function handleAnswer(option) {
-    if (selected !== null) return
+    if (answeredRef.current) return
+    answeredRef.current = true
     setSelected(option)
     const q       = questions[current]
     const correct = option === q.correct
@@ -186,10 +197,21 @@ export default function GamePage() {
   }
 
   function handleNext() {
+    const isLastQuestion = current + 1 >= questions.length
+
+    if (isLastQuestion && !reachedEnd) {
+      // Primeiro clique na última pergunta: só confirma a resposta e troca
+      // o rótulo do botão para "Ver Resultado". Não finaliza ainda.
+      setReachedEnd(true)
+      return
+    }
+
+    answeredRef.current = false
     setSelected(null)
     setReaction('idle')
     setBubble(null)
-    if (current + 1 >= questions.length) finishPhase()
+
+    if (isLastQuestion) finishPhase()
     else setCurrent((c) => c + 1)
   }
 
@@ -209,6 +231,8 @@ export default function GamePage() {
     setShowResult(false)
     resetGame()
     correctCountRef.current = 0
+    answeredRef.current = false
+    setReachedEnd(false)
     setCurrent(0)
     setSelected(null)
     setShowIntro(true)
@@ -244,7 +268,14 @@ export default function GamePage() {
   }
 
   const q        = questions[current]
-  const progress = questions.length > 0 ? ((current + 1) / questions.length) * 100 : 0
+  const isLastQuestion = current + 1 >= questions.length
+  // current = quantas perguntas já foram respondidas (0-index da pergunta atual,
+  // ainda não respondida). Usar (current + 1) fazia a barra chegar a 100% já na
+  // última pergunta, antes mesmo de respondê-la. Na última pergunta, só conta
+  // como respondida (100%) depois que o aluno confirma com "Próxima" (reachedEnd).
+  const progress = questions.length > 0
+    ? ((current + (isLastQuestion && reachedEnd ? 1 : 0)) / questions.length) * 100
+    : 0
   const charId   = world.characterId
 
   // Fala do resultado
@@ -318,9 +349,9 @@ export default function GamePage() {
               )
             })}
           </div>
-          {selected !== null && (
+          {selected !== null && reaction === 'idle' && (
             <button onClick={handleNext} disabled={submitting} style={{ marginTop: 28, width: '100%', padding: '15px', background: world.color, color: '#fff', border: 'none', borderRadius: 12, fontSize: 17, fontWeight: 700, cursor: 'pointer' }}>
-              {current + 1 >= questions.length ? (submitting ? 'Salvando...' : 'Ver Resultado 🎉') : 'Próxima →'}
+              {current + 1 >= questions.length && reachedEnd ? (submitting ? 'Salvando...' : 'Ver Resultado 🎉') : 'Próxima →'}
             </button>
           )}
         </div>

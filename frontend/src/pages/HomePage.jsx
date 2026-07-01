@@ -42,7 +42,7 @@ export default function HomePage() {
         <section className="section section--tight">
           <div className="section-heading">
             <span className="eyebrow">Elenco principal</span>
-            <h2>Amigos que ajudam em cada etapa</h2>
+            <h2>Amigos que ajudam em cada etapa.</h2>
           </div>
 
           <div className="character-grid">
@@ -82,7 +82,7 @@ export default function HomePage() {
         <section className="section">
           <div className="section-heading">
             <span className="eyebrow">Mapa de aprendizagem</span>
-            <h2>Seis mundos, cinco fases por mundo</h2>
+            <h2>Seis mundos, cinco fases por mundo.</h2>
           </div>
 
           <div className="world-grid">
@@ -96,6 +96,7 @@ export default function HomePage() {
                   style={{
                     '--accent': world.color,
                     '--accent-soft': world.softColor,
+                    '--world-bg': `url(${world.backgroundImage})`,
                   }}
                 >
                   <div className="world-card__top">

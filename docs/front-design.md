@@ -158,6 +158,42 @@ Classes principais adicionadas:
 - Movimento futuro deve respeitar `accessibility-reduced-motion` definido em `docs/personagens-animacoes.md`.
 - Evitar depender de emojis como principal elemento visual; usar assets reais quando existirem.
 
+## Mapa de jornada da tela de fases (2026-06-30)
+
+`PhaseSelectPage.jsx` deixou de ser uma lista simples de cards e passou a ser um mapa ilustrado por mundo, com o personagem caminhando entre os nós das fases.
+
+### Dados em `worlds.js`
+
+Cada mundo em `frontend/src/data/worlds.js` pode ter os seguintes campos opcionais (todos em `{ x, y }` como **porcentagem** do `.phase-map`, 0-100):
+
+- `phasePoints`: array de 5 pontos — onde cada badge numerado (e, por padrão, o card de título/estrelas acima dele) fica posicionado. Se ausente, usa `MAP_POINTS` (fallback genérico) em `PhaseSelectPage.jsx`.
+- `characterPoints`: array de 5 pontos — onde o personagem (Luma/Byte/Teo/Bia/Nino/Faísca) fica parado quando a fase correspondente é a "atual". Se ausente, usa os mesmos `phasePoints`.
+- `cardPoints`: array de 5 pontos (ou `null` por índice) — só preencher quando o card de uma fase específica precisa ficar **desacoplado** do badge (ex: para não sobrepor outro elemento do mapa). Quando `null`/ausente, o card segue o comportamento padrão (sempre acima do badge, automático).
+- `mapImage`: imagem de fundo específica do mapa de fases (separada de `backgroundImage`, usada em outras telas).
+- `walkDuration`: duração em ms da caminhada do personagem entre pontos (default `2200`).
+- `phases`: quantidade de fases do mundo (hoje sempre `5`, ver `docs/mundos-e-fases.md`).
+
+Todos os 6 mundos já têm `phasePoints` + `characterPoints` completos (1º ao 5º ano), ajustados manualmente para encaixar na arte de cada mapa. **Não regenerar essas coordenadas automaticamente** — foram posicionadas visualmente, mundo por mundo, fase por fase.
+
+### Modo de edição (dev)
+
+Botão "✏️ Editar posições" no topo da tela de fases ativa um modo de arrastar-e-soltar:
+- Arraste o personagem ou qualquer badge numerado para reposicionar.
+- Arraste o **card** de uma fase específica para desacoplá-lo do badge (vira uma entrada em `cardPoints`).
+- Um painel mostra o JSON das coordenadas atuais (`characterPoint`, `phasePoints`, `cardPoints`) com botão "Copiar JSON", para colar de volta em `worlds.js`.
+- **Importante:** mover só o badge (não o card) mantém o formato padrão (card sempre acima, automático). Só usar `cardPoints` quando for necessário separar os dois.
+
+### Comportamento da caminhada (bugs corrigidos)
+
+- **Sem "andar sozinho":** a transição CSS de posição só fica ativa quando `isMoving` é `true` (clique do aluno). Fora isso, o personagem aparece direto na posição (sem animação), evitando que um recálculo de posição (ex: ao reabrir a tela após completar uma fase) pareça uma caminhada automática.
+- **Sincronizado com o fim real do movimento:** em vez de um `setTimeout(walkDuration)` solto (que podia ficar alguns ms fora de sincronia com a transição CSS de verdade), o fim da caminhada é detectado pelo evento `transitionend` do elemento do personagem. Um `setTimeout(walkDuration + 250)` continua existindo só como rede de segurança.
+- **Pula caminhada quando não há distância real:** se o aluno clica na fase em que o personagem já está parado (o caso mais comum — ele sempre começa na "próxima fase disponível"), não roda nenhuma animação de andar; navega direto após uma pequena pausa (250ms).
+- **Frames de caminhada:** por padrão usa `andando_01`, `02`, `03` (não os 5 frames disponíveis). Exceções por personagem ficam em `WALK_FRAME_NUMBERS` — ex: Luma pula o frame `01` porque nele ela aparece segurando um livro, o que quebra a ilusão de caminhada.
+
+### Card do badge (estrelinha removida)
+
+O indicador decorativo de "fase concluída" (`::after { content: '★' }` sobre o badge) foi removido — ficava cortado/malposicionado depois que o badge foi reduzido de 54px para 38px, e era redundante com a faixa de 3 estrelas já exibida no card.
+
 ## Pendencias de front
 
 - Criar componentes reutilizaveis para `WorldCard`, `CharacterCard` e `PageShell`.

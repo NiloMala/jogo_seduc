@@ -80,6 +80,14 @@ Mapa de acoes usadas no hover:
 
 Observacao: quando houver sprites dedicados de `acenando` para todos os personagens, trocar o hover para usar essa acao em todos.
 
+## Caminhada no mapa de fases (2026-06-30)
+
+Sprites `andando_01.png` a `andando_05.png` (pasta `frontend/public/assets/personagens_sprites/{id}/sprites/`) são usados no mapa de jornada da tela de fases (`PhaseSelectPage.jsx`, ver `docs/front-design.md`).
+
+- Ciclo padrão usa só os 3 primeiros frames (`01`, `02`, `03`), trocando a cada 165ms.
+- **Luma é exceção:** pula o frame `01` (ela aparece segurando um livro nesse frame, o que quebra a ilusão de caminhada) — usa só `02`/`03`. Configurado em `WALK_FRAME_NUMBERS` no topo de `PhaseSelectPage.jsx`.
+- Se outro personagem tiver um frame de caminhada com problema parecido (pose estática, prop demais, etc.), adicionar a mesma exceção em `WALK_FRAME_NUMBERS` em vez de remover o arquivo do sprite.
+
 ## Combinado de trabalho
 
 - Codex: responsavel por design, experiencia visual, frontend, organizacao de assets, estados de UI e documentacao visual.

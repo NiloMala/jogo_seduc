@@ -68,7 +68,7 @@ export default function WorldSelectPage() {
                 >
                   {/* Topo colorido com o bichinho */}
                   <div style={{
-                    background: `linear-gradient(160deg, ${world.softColor} 0%, ${world.color}22 100%)`,
+                    background: `linear-gradient(180deg, rgba(18, 20, 35, 0.2), rgba(18, 20, 35, 0.48)), url(${world.backgroundImage}) center / cover no-repeat`,
                     padding: '28px 24px 16px',
                     textAlign: 'center',
                     position: 'relative',
@@ -76,7 +76,7 @@ export default function WorldSelectPage() {
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
-                    justifyContent: 'center',
+                    justifyContent: 'flex-end',
                   }}>
                     {/* Emoji do mundo no canto */}
                     <div style={{
@@ -93,13 +93,15 @@ export default function WorldSelectPage() {
 
                     {/* Bichinho animado */}
                     <div style={{
-                      animation: 'mascot-orbit 3s ease-in-out infinite',
-                      filter: 'drop-shadow(0 6px 16px rgba(0,0,0,0.15))',
+                      marginTop: 12,
+                      filter: 'drop-shadow(0 10px 18px rgba(0,0,0,0.36))',
+                      transform: 'translateY(10px)',
                     }}>
                       <CharacterSprite
                         id={world.characterId}
                         size={110}
                         active={isHovered}
+                        className="world-select-character"
                         title={character?.name}
                       />
                     </div>
@@ -109,8 +111,9 @@ export default function WorldSelectPage() {
                       marginTop: 8,
                       fontSize: 12,
                       fontWeight: 800,
-                      color: world.color,
+                      color: '#fff',
                       letterSpacing: '0.03em',
+                      textShadow: '0 2px 8px rgba(0,0,0,0.55)',
                       textTransform: 'uppercase',
                     }}>
                       {character?.name} · {character?.title}

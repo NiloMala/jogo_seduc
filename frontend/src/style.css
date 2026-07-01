@@ -98,19 +98,22 @@ img {
 .home-hero {
   align-items: center;
   background:
-    radial-gradient(circle at top left, rgba(255, 255, 255, 0.26), transparent 32%),
-    linear-gradient(135deg, #5d35b1 0%, #7c4dff 46%, #26a6c9 100%);
+    linear-gradient(90deg, rgba(11, 36, 24, 0.54), rgba(11, 36, 24, 0.12) 48%, rgba(11, 36, 24, 0.32)),
+    url('/assets/backgrounds/hero-missao-saber.png') center bottom / cover no-repeat;
   color: #ffffff;
   display: flex;
   justify-content: center;
   min-height: 520px;
   overflow: hidden;
   padding: 48px clamp(20px, 5vw, 72px);
+  position: relative;
   text-align: center;
 }
 
 .home-hero__content {
   max-width: 900px;
+  position: relative;
+  z-index: 1;
   text-align: center;
 }
 
@@ -158,6 +161,24 @@ img {
 .section-heading {
   margin-bottom: 28px;
   max-width: 680px;
+}
+
+.section--tight .section-heading {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.section-heading {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  text-align: center;
+}
+
+.section-heading h2 {
+  font-size: clamp(1.8rem, 3.4vw, 2.7rem);
+  white-space: nowrap;
 }
 
 .section-heading .eyebrow {
@@ -270,9 +291,17 @@ img {
 
 .world-card {
   background:
-    linear-gradient(180deg, var(--accent-soft), #ffffff 58%);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.54), #ffffff 66%),
+    var(--world-bg, linear-gradient(180deg, var(--accent-soft), #ffffff 58%)) center top / cover no-repeat;
   min-height: 184px;
+  overflow: hidden;
   padding: 22px;
+  position: relative;
+}
+
+.world-card > * {
+  position: relative;
+  z-index: 1;
 }
 
 .world-card__top {
@@ -309,6 +338,186 @@ img {
   text-align: center;
 }
 
+.phase-page {
+  flex: 1;
+  margin: 0 auto;
+  max-width: 1180px;
+  padding: 32px 24px 56px;
+  width: 100%;
+}
+
+.phase-page__back {
+  color: var(--color-primary);
+  display: inline-flex;
+  font-size: 0.9rem;
+  font-weight: 800;
+  margin-bottom: 22px;
+}
+
+.phase-page__header {
+  align-items: end;
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.phase-page__header h1 {
+  color: var(--color-text);
+  font-size: clamp(2rem, 5vw, 3.3rem);
+  line-height: 1;
+  margin-top: 6px;
+}
+
+.phase-page__header p {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  margin-top: 8px;
+}
+
+.phase-page__loading {
+  color: var(--color-text-muted);
+  padding: 48px;
+  text-align: center;
+}
+
+.phase-map {
+  aspect-ratio: 16 / 9;
+  background-position: center;
+  background-size: cover;
+  border: 3px solid color-mix(in srgb, var(--world-color) 25%, #ffffff);
+  border-radius: 22px;
+  box-shadow: 0 22px 58px rgba(45, 45, 58, 0.22);
+  min-height: 520px;
+  overflow: hidden;
+  position: relative;
+}
+
+.phase-map::after {
+  background:
+    radial-gradient(circle at 50% 55%, transparent 0 48%, rgba(6, 10, 18, 0.18) 100%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(0, 0, 0, 0.16));
+  content: '';
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+.phase-map__route {
+  display: none;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.22));
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: 1;
+}
+
+.phase-map__route path {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.78);
+  stroke-dasharray: 2.5 2.5;
+  stroke-linecap: round;
+  stroke-width: 1.2;
+}
+
+.phase-map__character {
+  filter: drop-shadow(0 12px 18px rgba(0, 0, 0, 0.36));
+  height: clamp(72px, 10vw, 132px);
+  object-fit: contain;
+  pointer-events: none;
+  position: absolute;
+  transform: translate(-50%, -86%);
+  transform-origin: center bottom;
+  transition:
+    left var(--walk-duration, 2200ms) cubic-bezier(0.2, 0.8, 0.2, 1),
+    top var(--walk-duration, 2200ms) cubic-bezier(0.2, 0.8, 0.2, 1);
+  user-select: none;
+  width: clamp(72px, 10vw, 132px);
+  z-index: 3;
+}
+
+.phase-map__character.is-walking {
+  animation: map-character-step 330ms ease-in-out infinite;
+}
+
+.phase-stop {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  display: flex;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+}
+
+.phase-stop:not(.is-locked):hover .phase-stop__badge {
+  transform: translateY(-3px) scale(1.06);
+}
+
+.phase-stop__badge {
+  align-items: center;
+  background: linear-gradient(180deg, #ffffff, color-mix(in srgb, var(--stop-color) 12%, #ffffff));
+  border: 2px solid var(--stop-color);
+  border-radius: 999px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.24);
+  color: var(--stop-color);
+  display: flex;
+  font-size: 0.95rem;
+  font-weight: 950;
+  height: 38px;
+  justify-content: center;
+  transition: transform 180ms ease;
+  width: 38px;
+}
+
+.phase-stop__card {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.78);
+  border-radius: 12px;
+  bottom: calc(100% + var(--card-gap, 14px));
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
+  color: var(--color-text);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  left: 50%;
+  min-width: 116px;
+  padding: 8px 10px;
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+.phase-stop__card strong {
+  font-size: 0.86rem;
+}
+
+.phase-stop.is-locked {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.phase-stop.is-locked .phase-stop__badge {
+  border-color: #cbd5e1;
+  color: #64748b;
+}
+
+.phase-map__destination {
+  background: rgba(255, 255, 255, 0.88);
+  border: 2px solid color-mix(in srgb, var(--world-color) 35%, #ffffff);
+  border-radius: 999px;
+  bottom: 8%;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  color: var(--world-color);
+  font-size: 0.82rem;
+  font-weight: 950;
+  padding: 9px 13px;
+  position: absolute;
+  right: 5%;
+  text-transform: uppercase;
+  z-index: 4;
+}
+
 .character-sprite {
   align-items: center;
   display: flex;
@@ -332,6 +541,10 @@ img {
 
 .character-sprite.is-waving img {
   filter: drop-shadow(0 8px 14px rgba(45, 45, 58, 0.14));
+}
+
+.world-select-character {
+  animation: sprite-breathe-fixed 4.6s ease-in-out infinite;
 }
 
 
@@ -382,6 +595,32 @@ img {
 
   70% {
     transform: translateY(1px) scale(0.995);
+  }
+}
+
+@keyframes sprite-breathe-fixed {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  45% {
+    transform: scale(1.012);
+  }
+
+  70% {
+    transform: scale(0.998);
+  }
+}
+
+@keyframes map-character-step {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 -3px;
   }
 }
 
@@ -477,6 +716,29 @@ img {
 
 /* ── RESPONSIVO ──────────────────────────────────────── */
 @media (max-width: 860px) {
+  .phase-page {
+    padding: 24px 14px 40px;
+  }
+
+  .phase-page__header {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .phase-map {
+    aspect-ratio: 4 / 5;
+    min-height: 640px;
+  }
+
+  .phase-stop__card {
+    min-width: 92px;
+    padding: 7px 8px;
+  }
+
+  .phase-stop__card strong {
+    font-size: 0.76rem;
+  }
+
   .home-hero {
     grid-template-columns: 1fr;
     min-height: auto;
@@ -506,6 +768,29 @@ img {
 }
 
 @media (max-width: 560px) {
+  .phase-map {
+    min-height: 590px;
+  }
+
+  .phase-stop__badge {
+    height: 34px;
+    width: 34px;
+  }
+
+  .phase-stop__card {
+    display: none;
+  }
+
+  .phase-map__destination {
+    bottom: 3%;
+    right: 50%;
+    transform: translateX(50%);
+  }
+
+  .section-heading h2 {
+    white-space: normal;
+  }
+
   .home-hero__actions,
   .button {
     width: 100%;
